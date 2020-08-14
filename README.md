@@ -4,7 +4,7 @@ Fill free space with zeros up to certain percent
 # Why
 It takes a lot of time to copy huge .qcow2 files over the network. And it makes
 no sense to copy junk inside free space, leftovers of normal VM operation.
-Often this space can't be compressed during backup operation, because erased
+Often this space can't be compressed during backup operation because erased
 files were encrypted or already compressed ones. Thus it's possible to save a 
 lot of backup time if free space was filled with zero prior to backup operation.
 
@@ -21,8 +21,10 @@ filesystem (directories must reside in certain filesystems). If you have two fil
 with /tmp in root fs and /home in separate partition, add following lines. Make sure
 they complete before your backup routine:
 
-0 0 * * * root /path/to/script/df-zerofill -d /tmp
-0 0 * * * root /path/to/script/df-zerofill -d /home/zerouser
+~~~
+0 0 * * * zerouser /path/to/script/df-zerofill -d /tmp
+0 0 * * * zerouser /path/to/script/df-zerofill -d /home/zerouser
+~~~
 
 # Caveats
 *  Do not run as root! 
