@@ -33,3 +33,11 @@ they complete before your backup routine:
 *  This utility is useless if you are using ZFS pools or something like that
 *  Care should be taken with percents. Do not fill all free space, otherwise you may render your system unusable.
 Be sure your programs won't break during this fillup operation.
+
+## Author
+
+* **Roman V. Isaev** - [burbilog](https://github.com/burbilog) - <rm@isaeff.net>
+
+## License
+
+Public domain
