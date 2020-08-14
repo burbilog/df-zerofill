@@ -22,8 +22,8 @@ with /tmp in root fs and /home in separate partition, add following lines and ma
 they complete before your backup routine:
 
 ~~~
-0 0 * * * zerouser /path/to/script/df-zerofill -d /tmp
-0 0 * * * zerouser /path/to/script/df-zerofill -d /home/zerouser
+0 0 * * * zerouser /path/to/script/df-zerofill.sh -d /tmp
+0 0 * * * zerouser /path/to/script/df-zerofill.sh -d /home/zerouser
 ~~~
 
 # Caveats
