@@ -2,7 +2,7 @@
 Fill free space with zeros up to certain percent
 
 # Why
-It takes a lot of time to copy huge .qcow2 over the network. And it makes
+It takes a lot of time to copy huge .qcow2 files over the network. And it makes
 no sense to copy junk inside free space, leftovers of normal VM operation.
 Often this space can't be compressed during backup operation, because erased
 files were encrypted or already compressed ones. Thus it's possible to save a 
@@ -18,8 +18,8 @@ lot of backup time if free space was filled with zero prior to backup operation.
 
 Create a user (let's say zerouser) and add this script to crontab in your VM for each
 filesystem (directories must reside in certain filesystems). If you have two filesystems
-with /tmp in root fs and /home in separate partition, add following lines before your
-backup routinge:
+with /tmp in root fs and /home in separate partition, add following lines. Make sure
+they complete before your backup routine:
 
 0 0 * * * root /path/to/script/df-zerofill -d /tmp
 0 0 * * * root /path/to/script/df-zerofill -d /home/zerouser
