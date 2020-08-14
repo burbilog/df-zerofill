@@ -18,7 +18,7 @@ lot of backup time if free space was filled with zero prior to backup operation.
 
 Create a user (let's say zerouser) and add this script to crontab in your VM for each
 filesystem (directories must reside in certain filesystems). If you have two filesystems
-with /tmp in root fs and /home in separate partition, add following lines. Make sure
+with /tmp in root fs and /home in separate partition, add following lines and make sure
 they complete before your backup routine:
 
 ~~~
