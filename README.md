@@ -30,5 +30,6 @@ they complete before your backup routine:
 *  Do not run as root! 
 *  This script is not a backup script, it is intened to be run INSIDE your VM on regular basis
 *  This utility is useless if you aren't using compression during backup operation.
+*  This utility is useless if you are using ZFS pools or something like that
 *  Care should be taken with percents. Do not fill all free space, otherwise you may render your system unusable.
 Be sure your programs won't break during this fillup operation.
