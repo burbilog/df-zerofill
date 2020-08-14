@@ -2,9 +2,11 @@
 Fill free space with zeros up to certain percent
 
 # Why
-Copying huge .qcow2 files takes a lot of time. 
-It's possible to save a lot of time if these files were zero-filled
-in free space. 
+It takes a lot of time to copy huge .qcow2 over the network. And it makes
+no sense to copy junk inside free space, leftovers of normal VM operation.
+Often this space can't be compressed during backup operation, because erased
+files were encrypted or already compressed ones. Thus it's possible to save a 
+lot of backup time if free space was filled with zero prior to backup operation.
 
 # Usage
 
@@ -24,6 +26,7 @@ backup routinge:
 
 # Caveats
 *  Do not run as root! 
+*  This script is not a backup script, it is intened to be run INSIDE your VM on regular basis
 *  This utility is useless if you aren't using compression during backup operation.
 *  Care should be taken with percents. Do not fill all free space, otherwise you may render your system unusable.
 Be sure your programs won't break during this fillup operation.
