@@ -47,7 +47,7 @@ if [ -z "${directory}" ]; then
 	exit 1
 else
 	# calculate disk space
-	freespace=`(df -l -k --output=avail ${directory}|grep -v Avail) 2> /dev/null	`
+	freespace=`(df -l -k --output=avail ${directory}|tail -n +2) 2> /dev/null	`
 	if ! [ "${freespace}" -ge 0 ] 2> /dev/null 
 	then
 		echo "Can't obtain filesystem size from directory '${directory}'"
